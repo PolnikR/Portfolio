@@ -1,0 +1,52 @@
+name: Deploy to Docker
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Ensure Portfolio directory exists and set up git
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+            mkdir -p /home/docker_web/Portfolio
+            cd /home/docker_web/Portfolio
+            if [ ! -d .git ]; then
+              git init
+              git remote add origin git@github.com:Polnikr/Portfolio.git
+            else
+              git remote set-url origin git@github.com:Polnikr/Portfolio.git
+            fi
+
+      - name: Pull latest changes and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/docker_web/Portfolio
+            git fetch origin master
+            git reset --hard origin/master
+            docker-compose down
+            docker-compose up -d --build
