@@ -38,8 +38,7 @@
                             {% for detail in project.project_details.all %}
                                 {% for technology in detail.technologies.all%}
                                     <img class="d-block d-dark-mode-none me-4" src="{{ technology.technology_image.url }}"
-                                     width="90" alt="Vue.js">
-
+                                      style="height: 48px; width: 80px;" alt="{{technology.technology_name}}">
                                 {% endfor%}
                             {% endfor%}
                         </div>
