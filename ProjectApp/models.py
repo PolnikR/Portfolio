@@ -101,9 +101,21 @@ class Service(models.Model):
 
         super().save(*args, **kwargs)
 
+class Category(models.Model):
+    category_name = models.CharField(max_length=255, null=True, blank=True)
+    category_description = models.TextField(null=True, blank=True)
+    category_icon = models.ImageField(upload_to='category_files/', null=True,
+                                     blank=True)
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return self.category_name
 
 class CV(models.Model):
-    category = models.CharField(max_length=255, null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='reference', null=True, blank=True)
     name = models.CharField(max_length=255, null=True, blank=True)
     years = models.IntegerField()
     position = models.CharField(max_length=255, null=True, blank=True)
@@ -240,6 +252,8 @@ class Project(models.Model):
                             ContentFile(output.read()), save=False)
 
         super().save(*args, **kwargs)
+
+
 
 
 

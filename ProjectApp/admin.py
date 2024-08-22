@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Picture, Element, Reference, ProjectOutcome, ProjectDetail, Project, Service, CV, Customer
+from .models import Picture, Element, Reference, ProjectOutcome, ProjectDetail, Project, Service, CV, Customer, Category
 from IndustryApp.models import Company
 
 
@@ -104,3 +104,9 @@ class CVAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'position')
     search_fields = ('name', 'category')
     list_filter = ('name',)
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('category_name', 'category_description')
+    search_fields = ('category_name',)
+    list_filter = ('category_name',)
