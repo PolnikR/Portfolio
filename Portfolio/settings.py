@@ -29,8 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['ochotnicky.eu', 'www.ochotnicky.eu', '*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://ochotnicky.eu',
-    'https://www.ochotnicky.eu',
+    'https://polnik.sk',
+    'https://www.polnik.sk',
 ]
 
 
