@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Technology,  Customer, CustomerElement, CustomerDetail
+from .models import Technology, Customer, CustomerElement, CustomerDetail
 
 
 # Register your models here.
@@ -8,7 +8,6 @@ class TechnologyAdmin(admin.ModelAdmin):
     list_display = ('technology_name',)
     search_fields = ('technology_name',)
     list_filter = ('technology_name',)
-
 
 
 @admin.register(Customer)
@@ -25,9 +24,11 @@ class CustomerElementAdmin(admin.ModelAdmin):
 
     def get_customers(self, obj):
         return obj.get_customers()
+
     get_customers.short_description = "Customers"
+
 
 @admin.register(CustomerDetail)
 class CustomerDetailAdmin(admin.ModelAdmin):
-    list_display = ('customer', )
+    list_display = ('customer',)
     filter_horizontal = ('elements',)

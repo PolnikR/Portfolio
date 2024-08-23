@@ -4,6 +4,7 @@ from io import BytesIO
 from PIL import Image, ImageOps
 from django.core.files.base import ContentFile
 
+
 # Create your models here.
 class Technology(models.Model):
     technology_name = models.CharField(max_length=255, null=True, blank=True)
@@ -17,8 +18,6 @@ class Technology(models.Model):
 
     def __str__(self):
         return self.technology_name
-
-
 
 
 class Customer(models.Model):
@@ -68,9 +67,11 @@ class CustomerElement(models.Model):
 
     def get_customers(self):
         return ",".join([str(detail.customer) for detail in self.customer_details.all()])
+
     class Meta:
         verbose_name = "Customer Element"
         verbose_name_plural = "Customer Elements"
+
 
 class CustomerDetail(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='details')
