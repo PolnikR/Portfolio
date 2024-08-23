@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Picture, Element, Reference, ProjectOutcome, ProjectDetail, Project, Service, CV, Customer, Category
-from IndustryApp.models import Company
+from .models import Picture, Element, Reference, ProjectOutcome, ProjectDetail, Project, Company
+
 
 
 # Register your models here.
@@ -65,9 +65,9 @@ class ReferenceAdmin(admin.ModelAdmin):
 
 @admin.register(ProjectOutcome)
 class ProjectOutcomeAdmin(admin.ModelAdmin):
-    list_display = ('project_id', 'name')
-    search_fields = ('project_id', 'name')
-    list_filter = ('project_id', 'name')
+    list_display = ('name',)
+    search_fields = ('name',)
+    list_filter = ('name',)
 
 
 @admin.register(ProjectDetail)
@@ -85,28 +85,9 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ('project_name',)
 
 
-@admin.register(Customer)
-class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('customer_name', 'customer_description')
-    search_fields = ('customer_name',)
-    list_filter = ('customer_name',)
 
-
-@admin.register(Service)
-class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('service_name', 'service_description')
-    search_fields = ('service_name',)
-    list_filter = ('service_name',)
-
-
-@admin.register(CV)
-class CVAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'position')
-    search_fields = ('name', 'category')
-    list_filter = ('name',)
-
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('category_name', 'category_description')
-    search_fields = ('category_name',)
-    list_filter = ('category_name',)
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = ('company_name', 'company_sphere')
+    search_fields = ('company_name', 'company_sphere')
+    list_filter = ('company_name', 'company_sphere')
