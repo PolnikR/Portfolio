@@ -14,3 +14,5 @@ def industry(request):
         'customers': customers
     }
     return render(request, 'IndustryApp/industry.html', context)
+
+
