@@ -3,16 +3,249 @@
 {% load static %}
 
 {% block content %}
+
+    <style>
+        #work-section {
+            display: none;
+        }
+
+    </style>
     <section class="position-relative overflow-hidden pt-5">
-        <div class="container position-relative z-2 pt-4 pt-sm-5 mt-2 mt-sm-0 mt-md-2 mt-lg-3 mt-xl-4 mt-xxl-5">
-            <div class="row justify-content-center py-4">
-                <div class="col-lg-11 col-xl-10 text-center pb-2 pb-sm-3 mb-lg-2 mb-xl-3">
-                    <h1 class="display-2 fw-normal mb-0"><span class="fw-bold">Moja cesta</span> života</h1>
+
+    </section>
+
+
+    <!-- Hero -->
+      <section class="container py-5 mt-5 mb-xl-3 mb-xxl-5">
+        <div class="row pt-2">
+
+          <!-- Text + CTA button -->
+          <div class="col-lg-6 d-flex flex-column mb-4 mb-lg-0 pb-sm-3 pb-lg-0">
+            <h1 class="display-1 text-uppercase fw-bold mt-auto mb-2">Moja <span class="fw-normal">cesta</span> života<span class="d-none d-md-inline-block align-middle ms-4" style="width: 120px; height: 2px; background-color: currentColor;"></span></h1>
+            <div class="d-flex align-items-center py-4 py-lg-5">
+              <a class="btn btn-lg btn-primary rounded-0 me-2 me-sm-3" href="#">Let's work together</a>
+              <div class="flex-shrink-sm-0">
+                <img class="d-dark-mode-none" src="assets/img/brands/clutch-rating-dark.svg" width="155" alt="Clutch">
+                <img class="d-none d-dark-mode-block" src="assets/img/brands/clutch-rating-light.svg" width="155" alt="Clutch">
+              </div>
+            </div>
+            <ul class="nav mt-auto mx-n2 pt-sm-3 pt-lg-0">
+              <li class="nav-item me-3">
+                <a class="nav-link p-2" href="#">instagram</a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link p-2" href="#">dribbble</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-2" href="#">behance</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services (Grid of cards) -->
+          <div class="col-lg-6">
+            <div class="row row-cols-1 row-cols-sm-2 g-1">
+
+              <!-- Card -->
+              <div class="col">
+                <a class="card-flip" href="#">
+                  <div class="card-flip-inner">
+                    <div class="card-flip-front" style="background-image: url('{% static 'HomeApp/assets/about/01.jpg' %}');">
+                      <div class="d-flex flex-column h-100" data-bs-theme="light">
+                        <h2 class="fs-lg fw-normal mb-0 mt-auto">Voľný čas</h2>
+                      </div>
+                    </div>
+                    <div class="card-flip-back bg-secondary">
+                      <div class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3">
+                        <h3 class="h4">Voľný čas</h3>
+                        <p class="text-body mb-3">Leo vitae sem eget eget at in vivamus placerat in sodales tristique a risusiis senectusic vitae sem eget eget at in vivamus placerat in sodales.</p>
+                        <div class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3">
+                          <div class="btn btn-sm btn-icon btn-outline-primary rounded-circle">
+                            <i class="ai-arrow-right"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Card -->
+              <div class="col">
+                <a class="card-flip" href="#">
+                  <div class="card-flip-inner">
+                    <div class="card-flip-front" style="background-image: url('{% static 'HomeApp/assets/about/02.jpg' %}');">
+                      <div class="d-flex flex-column h-100" data-bs-theme="light">
+                        <h2 class="fs-lg fw-normal mb-0 mt-auto">Práca</h2>
+                      </div>
+                    </div>
+                    <div class="card-flip-back bg-secondary">
+                      <div class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3">
+                        <h3 class="h4">Práca</h3>
+                        <ul class="text-body ps-4 mb-3">
+                          <li class="mb-2">Social media posts</li>
+                          <li class="mb-2">Content plan</li>
+                          <li class="mb-2">Advertising launch</li>
+                          <li class="mb-2">Photo and video content</li>
+                          <li class="mb-1">Cases and portfolio</li>
+                        </ul>
+                        <div class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3">
+                          <div class="btn btn-sm btn-icon btn-outline-primary rounded-circle">
+                            <i class="ai-arrow-right"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Card -->
+              <div class="col order-sm-2">
+                <a class="card-flip" href="#">
+                  <div class="card-flip-inner">
+                    <div class="card-flip-front" style="background-image: url('{% static 'HomeApp/assets/about/03.jpg' %}');">
+                      <div class="d-flex flex-column h-100" data-bs-theme="light">
+                        <h2 class="fs-lg fw-normal mb-0 mt-auto">Vedľajšie projekty</h2>
+                      </div>
+                    </div>
+                    <div class="card-flip-back bg-secondary">
+                      <div class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3">
+                        <h3 class="h4">Vedľajšie projekty</h3>
+                        <p class="text-body mb-3">Pharetra in morbi quis is massa maecenas arcu vulputate in pulvinar elit non nullage a, duis tortor mi massa ipsum in eu eu eget libero.</p>
+                        <div class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3">
+                          <div class="btn btn-sm btn-icon btn-outline-primary rounded-circle">
+                            <i class="ai-arrow-right"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Card -->
+              <div class="col order-sm-1">
+                <a class="card-flip" href="#">
+                  <div class="card-flip-inner">
+                    <div class="card-flip-front" style="background-image: url('{% static 'HomeApp/assets/about/04.jpg' %}');">
+                      <div class="d-flex flex-column h-100" data-bs-theme="light">
+                        <h2 class="fs-lg fw-normal mb-0 mt-auto">Vzdelanie</h2>
+                      </div>
+                    </div>
+                    <div class="card-flip-back bg-secondary">
+                      <div class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3">
+                        <h3 class="h4">Vzdelanie</h3>
+                        <ul class="text-body ps-4 mb-3">
+                          <li class="mb-2">Identity design</li>
+                          <li class="mb-2">Brand book creation</li>
+                          <li class="mb-2">Colors and fonts</li>
+                          <li class="mb-2">Banners and covers</li>
+                          <li class="mb-1">Visual style</li>
+                        </ul>
+                        <div class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3">
+                          <div class="btn btn-sm btn-icon btn-outline-primary rounded-circle">
+                            <i class="ai-arrow-right"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section  id="work-section"  class="container py-5 mb-lg-2 mt-lg-3 my-xl-4 my-xxl-5">
+        <div class="d-md-flex align-items-center justify-content-between pt-2 pt-sm-3 pb-3 mt-md-3 mb-3 mb-lg-4"
+             style="margin-top: -20px;">
+            <div class="d-flex align-items-center mb-4 mb-md-0">
+                <h2 class="h1 mb-0">Práca</h2>
+                <div class="text-warning flex-shrink-0 ps-sm-1 ms-3">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0L12.6798 4.12733C13.2879 7.81883 16.1812 10.7121 19.8727 11.3202L24 12L19.8727 12.6798C16.1812 13.2879 13.2879 16.1812 12.6798 19.8727L12 24L11.3202 19.8727C10.7121 16.1812 7.81882 13.2879 4.12733 12.6798L0 12L4.12733 11.3202C7.81883 10.7121 10.7121 7.81882 11.3202 4.12733L12 0Z"></path>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+        <div class="tab-content border-top border-bottom mb-3 mb-sm-4 mb-lg-5">
+            <div class="tab-pane fade show active" id="dayOne" role="tabpanel">
+                <div class="row py-3 my-2 my-md-3">
+                    <div class="col-md-3">
+                        <div class="h6 mb-2 mb-md-0">9:30 - 10:30 am</div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h4 mb-0">Opening party &amp; registration</h3>
+                        <p class="pt-2 pt-md-3 mb-md-0">Vitae lectus metus non dolor mattis penatibus ultricies aliquet
+                            nunc sit metus turpis enim urna nec risus vehicula pharetra diam erat ac proin donec.</p>
+                    </div>
+                    <div class="col-md-3 text-md-end">
+                        <div class="d-inline-flex">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row py-3 my-2 my-md-3">
+                    <div class="col-md-3">
+                        <div class="h6 mb-2 mb-md-0">10:30 - 11:30 am</div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h4 mb-0">What are the top ideas for startup in 2023</h3>
+                        <p class="pt-2 pt-md-3 mb-md-0">Iaculis tellus morbi dui metus non leo pellentesque et euismod
+                            et tellus.</p>
+                    </div>
+                    <div class="col-md-3 text-md-end">
+                        <div class="d-inline-flex">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row py-3 my-2 my-md-3">
+                    <div class="col-md-3">
+                        <div class="h6 mb-2 mb-md-0">11:30 - 12:00 am</div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h4 mb-0">Coffee break</h3>
+                    </div>
+                </div>
+                <hr>
+                <div class="row py-3 my-2 my-md-3">
+                    <div class="col-md-3">
+                        <div class="h6 mb-2 mb-md-0">12:00 - 15:00 am</div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h4 mb-0">Workshop: leading UI/UX design trends</h3>
+                        <p class="pt-2 pt-md-3 mb-md-0">Mi ullamcorper porttitor auctor nunc dui massa mattis fusce
+                            convallis. Aliquam quam nulla faucibus id. Eu cum quisque imperdiet semper ut ligula
+                            scelerisque. </p>
+                    </div>
+                    <div class="col-md-3 text-md-end">
+                        <div class="d-inline-flex">
+                            <div class="bg-light flex-shrink-0 rounded-circle position-relative z-4"
+                                 style="padding: 3px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row py-3 my-2 my-md-3">
+                    <div class="col-md-3">
+                        <div class="h6 mb-2 mb-md-0">15:00 - 17:30 pm</div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h4 mb-0">Group discussion: How to align and empower cross-team success</h3>
+                        <p class="pt-2 pt-md-3 mb-md-0">Vitae lectus metus non dolor mattis penatibus ultricies aliquet
+                            nunc sit metus.</p>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </section>
-
+      </section>
 
 
 
@@ -20,4 +253,19 @@
     <!-- Vendor scripts: JS libraries and plugins -->
     <script src="{% static 'HomeApp/assets/vendor/parallax-js/dist/parallax.min.js' %}"></script>
     <script src="{% static 'HomeApp/assets/vendor/aos/dist/aos.js' %}"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        const cards = document.querySelectorAll('.card-flip-back')
+
+        const workSection = document.getElementById('work-section');
+
+        cards.forEach(card => {
+          card.addEventListener('click', function(){
+            workSection.style.display = 'block'
+            workSection.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      });
+    </script>>
 {% endblock %}
