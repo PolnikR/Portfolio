@@ -24,138 +24,44 @@
                 <li class="nav-item mb-0">
                     <a class="nav-link border active" href="#" data-group="all">All</a>
                 </li>
-                <li class="nav-item mb-0">
-                    <a class="nav-link border" href="#" data-group="branding">Branding</a>
-                </li>
-                <li class="nav-item mb-0">
-                    <a class="nav-link border" href="#" data-group="ebook">E-books</a>
-                </li>
-                <li class="nav-item mb-0">
-                    <a class="nav-link border" href="#" data-group="identity">Identity</a>
-                </li>
-                <li class="nav-item mb-0">
-                    <a class="nav-link border" href="#" data-group="product">Product</a>
-                </li>
+                {% for  customer in customers%}
+                    <li class="nav-item mb-0">
+                        <a class="nav-link border" href="#" data-group="{{customer.id}}">{{customer}}</a>
+                    </li>
+                {% empty %}
+                    <li class="nav-item mb-0">
+                        <a class="nav-link border disabled" href="#">No customers available</a>
+                    </li>
+                {% endfor %}
             </ul>
 
             <!-- Grid of portfolio items -->
             <div class="masonry-grid" data-columns="2">
-
+                {% for project in projects %}
                 <!-- Item -->
-                <article class="masonry-grid-item pb-lg-5 mb-3 mb-lg-0 mb-xl-2" data-groups='["branding"]'>
+                <article class="masonry-grid-item pb-lg-5 mb-3 mb-lg-0 mb-xl-2" data-groups='["{{project.customers.id}}"]'>
                     <div class="card-hover zoom-effect mx-auto" style="max-width: 620px;">
                         <div class="zoom-effect-wrapper rounded-5">
                             <div class="zoom-effect-img">
-                                <img src="{% static 'HomeApp/assets/img/portfolio/grid/01.jpg' %}" alt="Image">
+                                <img src="{{project.project_image.url}}" alt="Image">
                             </div>
                         </div>
                         <div class="pt-4 mt-lg-2">
                             <h2 class="h5 mb-2">
-                                <a class="stretched-link text-nav" href="/projekty/detail/">Strategy and design
-                                    for a handmade tableware company</a>
+                                <a class="stretched-link text-nav" href="/projekty/{{project.id}}">{{project}}</a>
                             </h2>
-                            <span class="fs-sm text-body-secondary opacity-0 d-none d-sm-block">Branding, Strategy</span>
-                            <span class="fs-sm text-body-secondary d-sm-none">Branding, Strategy</span>
+                            <span class="fs-sm text-body-secondary opacity-0 d-none d-sm-block">{{project.customers}}</span>
+                            <span class="fs-sm text-body-secondary d-sm-none">{{project.customers}</span>
                         </div>
                     </div>
                 </article>
+                {% empty %}
+                <p>No projects available</p>
 
-                <!-- Item -->
-                <article class="masonry-grid-item pb-lg-5 mb-3 mb-lg-0 mb-xl-2" data-groups='["product"]'>
-                    <div class="card-hover zoom-effect mx-auto" style="max-width: 620px;">
-                        <div class="zoom-effect-wrapper rounded-5">
-                            <div class="zoom-effect-img">
-                                <img src="{% static 'HomeApp/assets/img/portfolio/grid/02.jpg' %}" alt="Image">
-                            </div>
-                        </div>
-                        <div class="pt-4 mt-lg-2">
-                            <h2 class="h5 mb-2">
-                                <a class="stretched-link text-nav" href="/projekty/detail/">Design for eco bags
-                                    and merch</a>
-                            </h2>
-                            <span class="fs-sm text-body-secondary opacity-0 d-none d-sm-block">Product design</span>
-                            <span class="fs-sm text-body-secondary d-sm-none">Product design</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Item -->
-                <article class="masonry-grid-item pb-lg-5 mb-3 mb-lg-0 mb-xl-2" data-groups='["branding"]'>
-                    <div class="card-hover zoom-effect mx-auto" style="max-width: 620px;">
-                        <div class="zoom-effect-wrapper rounded-5">
-                            <div class="zoom-effect-img">
-                                <img src="{% static 'HomeApp/assets/img/portfolio/grid/04.jpg' %}" alt="Image">
-                            </div>
-                        </div>
-                        <div class="pt-4 mt-lg-2">
-                            <h2 class="h5 mb-2">
-                                <a class="stretched-link text-nav" href="/projekty/detail/">Bottle for French
-                                    perfume brand</a>
-                            </h2>
-                            <span class="fs-sm text-body-secondary opacity-0 d-none d-sm-block">Packaging design</span>
-                            <span class="fs-sm text-body-secondary d-sm-none">Packaging design</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Item -->
-                <article class="masonry-grid-item pb-lg-5 mb-3 mb-lg-0 mb-xl-2" data-groups='["ebook"]'>
-                    <div class="card-hover zoom-effect mx-auto" style="max-width: 620px;">
-                        <div class="zoom-effect-wrapper rounded-5">
-                            <div class="zoom-effect-img">
-                                <img src="{% static 'HomeApp/assets/img/portfolio/grid/03.jpg' %}" alt="Image">
-                            </div>
-                        </div>
-                        <div class="pt-4 mt-lg-2">
-                            <h2 class="h5 mb-2">
-                                <a class="stretched-link text-nav" href="/projekty/detail/">Book cover design
-                                    Twin Fish</a>
-                            </h2>
-                            <span class="fs-sm text-body-secondary opacity-0 d-none d-sm-block">Cover design</span>
-                            <span class="fs-sm text-body-secondary d-sm-none">Cover design</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Item -->
-                <article class="masonry-grid-item pb-lg-5 mb-3 mb-lg-0 mb-xl-2" data-groups='["identity"]'>
-                    <div class="card-hover zoom-effect mx-auto" style="max-width: 620px;">
-                        <div class="zoom-effect-wrapper rounded-5">
-                            <div class="zoom-effect-img">
-                                <img src="{% static 'HomeApp/assets/img/portfolio/grid/06.jpg' %}" alt="Image">
-                            </div>
-                        </div>
-                        <div class="pt-4 mt-lg-2">
-                            <h2 class="h5 mb-2">
-                                <a class="stretched-link text-nav" href="/projekty/detail/">Business cards and
-                                    identity for Sen Jonson</a>
-                            </h2>
-                            <span class="fs-sm text-body-secondary opacity-0 d-none d-sm-block">Identity design</span>
-                            <span class="fs-sm text-body-secondary d-sm-none">Identity design</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Item -->
-                <article class="masonry-grid-item pb-lg-5 mb-3 mb-lg-0 mb-xl-2" data-groups='["product"]'>
-                    <div class="card-hover zoom-effect mx-auto" style="max-width: 620px;">
-                        <div class="zoom-effect-wrapper rounded-5">
-                            <div class="zoom-effect-img">
-                                <img src="{% static 'HomeApp/assets/img/portfolio/grid/05.jpg' %}" alt="Image">
-                            </div>
-                        </div>
-                        <div class="pt-4 mt-lg-2">
-                            <h2 class="h5 mb-2">
-                                <a class="stretched-link text-nav" href="/projekty/detail/">Toothbrushes made
-                                    from eco materials</a>
-                            </h2>
-                            <span class="fs-sm text-body-secondary opacity-0 d-none d-sm-block">Product design</span>
-                            <span class="fs-sm text-body-secondary d-sm-none">Product design</span>
-                        </div>
-                    </div>
-                </article>
+                {% endfor %}
             </div>
         </div>
+
 
         <!-- Pagination -->
         <nav class="mt-n1 mb-md-2 mb-lg-3 mb-xl-4" aria-label="Portfolio pagination">

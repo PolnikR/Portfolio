@@ -33,7 +33,7 @@ class Project(models.Model):
             image = ImageOps.exif_transpose(image)
 
             # Zmena veľkosti na 636x424
-            image = image.resize((620, 620))
+            image = image.resize((620, 629))
 
             # Konverzia do WebP formátu
             output = BytesIO()

@@ -10,8 +10,8 @@
         <nav aria-label="breadcrumb">
           <ol class="pt-lg-2 pb-lg-3 pb-1 breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/posobnost">Zákazníci</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Single project v.1</li>
+            <li class="breadcrumb-item"><a href="/projekty">Projekty</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Projekt</li>
           </ol>
         </nav>
 
@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col-lg-11 col-xl-10">
 
-            <h1 class="display-2 pb-3 pb-md-4 pb-lg-5">Business strategy for a brand of vintage bags</h1>
+            <h1 class="display-2 pb-3 pb-md-4 pb-lg-5">{{project}}</h1>
           </div>
         </div>
 
@@ -30,20 +30,20 @@
         <div class="border-bottom py-4 py-lg-5">
           <div class="row">
             <div class="col-lg-11 col-xl-10">
-              <p class="text-dark lead mb-2 mb-lg-3-0 mb-xl-4 mb-xxl-3">Morbi et massa fames ac scelerisque sit commodo dignissim faucibus quisque proin lectus laoreet sem adipiscing sollicitudin erat massa tellus lorem enim aenean phasellus in hendrerit interdum lorem proin pretium dictum urna suspendisse quis risus et.</p>
+              <p class="text-dark lead mb-2 mb-lg-3-0 mb-xl-4 mb-xxl-3">{{project.project_description}}</p>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 g-sm-4 pt-4 pt-xxl-5 mb-2 mb-sm-3 pb-xxl-4">
                 <div class="col">
                   <h2 class="fs-base fw-normal text-body-secondary mb-2 mb-sm-3">Company</h2>
                   <ul class="list-unstyled fs-lg fw-semibold text-dark mb-0">
-                    <li class="d-block py-1">Vintage</li>
+                    <li class="d-block py-1">{{project.company}}</li>
                     <li class="d-block py-1">12-18 employees</li>
                     <li class="d-block py-1">Dublin, Ireland</li>
                   </ul>
                 </div>
                 <div class="col">
-                  <h2 class="fs-base fw-normal text-body-secondary mb-2 mb-sm-3">Indusrty</h2>
+                  <h2 class="fs-base fw-normal text-body-secondary mb-2 mb-sm-3">Industry</h2>
                   <ul class="list-unstyled fs-lg fw-semibold text-dark mb-0">
-                    <li class="d-block py-1">E-commerce</li>
+                    <li class="d-block py-1">{{project.company.company_sphere}}</li>
                   </ul>
                 </div>
                 <div class="col">
