@@ -19,12 +19,12 @@
         <div class="row">
           <div class="col-lg-11 col-xl-10">
 
-            <h1 class="display-2 pb-3 pb-md-4 pb-lg-5">{{project}}</h1>
+            <h1 class="display-2 pb-3 pb-md-4 pb-lg-5">{{project.project}}</h1>
           </div>
         </div>
 
         <!-- Main image -->
-        <img class="d-block rounded-5 mb-3 mb-xl-4 mb-xxl-5" src="{% static 'HomeApp/assets/img/portfolio/single/v1/01.jpg' %}" alt="Image">
+        <img class="d-block rounded-5 mb-3 mb-xl-4 mb-xxl-5" src="{{project.project.project_image.url}}" alt="Image">
 
         <!-- Project overview -->
         <div class="border-bottom py-4 py-lg-5">
