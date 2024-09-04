@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jekf3l_b3kh5qdy#-ww6*fjbv(+q$jc-y4vdpun$t$=3yv75wv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ochotnicky.eu', 'www.ochotnicky.eu', '*']
+ALLOWED_HOSTS = ['polnik.sk', 'www.polnik.sk', '*']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://polnik.sk',
