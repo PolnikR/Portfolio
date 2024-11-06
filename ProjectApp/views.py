@@ -28,3 +28,6 @@ def project(request, project_id):
 
 def projectDetail(request):
     return render(request, 'ProjectApp/project.html')
+
+def commitNeed(request):
+    return render(request, 'ProjectApp/project.html')
